@@ -1,7 +1,5 @@
-$primary-color: #007bff;
-
-body {
-  background-color: $primary-color;
-  color: white;
-  font-family: Arial, sans-serif;
-}
+@use './utilities';
+@use './base';
+@use './layout';
+@use './components';
+@use './pages';
