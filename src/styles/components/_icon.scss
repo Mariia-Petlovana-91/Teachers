@@ -1,0 +1,20 @@
+@use '../utilities/variables' as vars;
+
+.icon {
+  width: 16px;
+  height: 16px;
+  color: vars.$summerGreen;
+  transition: vars.$transiyionColors;
+}
+
+@media screen and (min-width: 768px) {
+  .icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+a:hover .icon,
+a:focus .icon {
+  color: vars.$parisWhite;
+}

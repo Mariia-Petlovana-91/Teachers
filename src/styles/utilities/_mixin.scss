@@ -1,0 +1,23 @@
+@mixin font($weight, $size, $line-height, $color, $letter-spacing: 0%) {
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $line-height;
+  color: $color;
+  letter-spacing: $letter-spacing;
+}
+
+@mixin flex(
+  $justify: center,
+  $items: center,
+  $gap: 0px,
+  $display: flex,
+  $derection: row,
+  $wrap: nowrap
+) {
+  justify-content: $justify;
+  align-items: $items;
+  gap: $gap;
+  display: $display;
+  flex-direction: $derection;
+  flex-wrap: $wrap;
+}
