@@ -19,10 +19,8 @@ createRoot(document.getElementById('root')).render(
 // import { FaRegHeart } from 'react-icons/fa';
 // import { FaStar } from 'react-icons/fa';
 // import { FiBookOpen } from 'react-icons/fi';
-// import { FiLogIn } from 'react-icons/fi';
-// import { FiLogOut } from 'react-icons/fi';
+
 // import { FiEye } from 'react-icons/fi';
 // import { FiEyeOff } from 'react-icons/fi';
-// import { FiMenu } from 'react-icons/fi';
-// import { RiCloseFill } from 'react-icons/ri';
+
 // import { PiDotsThreeOutlineVerticalFill } from 'react-icons/pi';

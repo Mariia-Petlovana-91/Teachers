@@ -1,4 +1,6 @@
-@mixin font($weight, $size, $line-height, $color, $letter-spacing: 0%) {
+@use '../utilities/variables' as vars;
+
+@mixin font($weight, $size, $line-height, $color: vars.$woodsmoke, $letter-spacing: 0%) {
   font-weight: $weight;
   font-size: $size;
   line-height: $line-height;

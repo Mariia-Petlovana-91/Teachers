@@ -17,8 +17,8 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
-            <Route path="catalog" element={<Teachers />} />
-            <Route path="catalog/:id" element={<Favorite />} />
+            <Route path="teachers" element={<Teachers />} />
+            <Route path="favorite" element={<Favorite />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>

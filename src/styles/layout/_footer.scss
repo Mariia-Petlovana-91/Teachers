@@ -9,12 +9,12 @@
 
 .footer__title {
   @include mix.flex($justify: flex-start, $gap: 10px);
-  @include mix.font(500, 16px, 1.25, vars.$woodsmoke);
+  @include mix.font(500, 16px, 1.25);
   margin-bottom: 10px;
 }
 
 .footer__link {
-  @include mix.font(400, 14px, 1.2, vars.$woodsmoke);
+  @include mix.font(400, 14px, 1.2);
 
   transition: vars.$transiyionColors;
   &:hover,
@@ -33,7 +33,7 @@
 }
 
 .footer__item {
-  @include mix.font(400, 14px, 1.2, vars.$woodsmoke);
+  @include mix.font(400, 14px, 1.2);
 }
 
 @media (min-width: 768px) {
