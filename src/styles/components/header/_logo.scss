@@ -1,8 +1,14 @@
 @use '../../utilities/mixin' as mix;
+@use '../../utilities/variables' as vars;
 
 .logo {
-  &__container {
+  &__link {
     @include mix.flex($justify: flex-start, $gap: 10px);
+
+    &:hover .logo__name,
+    &:focus .logo__name {
+      color: vars.$summerGreen;
+    }
   }
 
   &__img {
@@ -24,6 +30,7 @@
 
     &__name {
       @include mix.font(500, 20px, 1.25);
+      transition: vars.$transitionAll;
     }
   }
 }

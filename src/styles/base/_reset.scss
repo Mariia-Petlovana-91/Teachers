@@ -1,3 +1,5 @@
+@use '../utilities/variables' as vars;
+
 body {
   font-family: Roboto;
   position: relative;
@@ -24,6 +26,7 @@ a {
   outline: none;
   color: currentColor;
   text-decoration: none;
+  transition: vars.$transitionAll;
 }
 
 button {
@@ -32,6 +35,7 @@ button {
   cursor: pointer;
   display: block;
   background-color: transparent;
+  transition: vars.$transitionAll;
 }
 
 img {

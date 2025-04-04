@@ -2,8 +2,8 @@ import imgHero from '../../img/hero.svg';
 
 const Hero = () => {
   return (
-    <section className="hero__container">
-      <div className="hero__descript">
+    <section className="hero">
+      <div className="hero__container">
         <h1 className="title__first">
           Unlock your potential with the best{' '}
           <span className="title__first--span">language</span> tutors
@@ -17,7 +17,7 @@ const Hero = () => {
           Get Started
         </button>
       </div>
-      <img src={imgHero} alt="hero image" />
+      <img className="hero__img" src={imgHero} alt="hero image" />
     </section>
   );
 };

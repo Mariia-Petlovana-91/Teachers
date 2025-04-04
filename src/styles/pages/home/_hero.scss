@@ -1,0 +1,57 @@
+@use '../../utilities/variables' as vars;
+@use '../../utilities/placeholder';
+@use '../../utilities/mixin' as mix;
+
+.hero {
+  margin-bottom: 24px;
+  &__container {
+    padding: 24px;
+    background-color: vars.$alabaster;
+    border-radius: 30px;
+    max-width: 568px;
+    margin: auto auto 24px auto;
+  }
+
+  &__text {
+    @include mix.font(400, 12px, 1.2);
+    margin-bottom: 24px;
+  }
+
+  &__img {
+    margin: auto;
+  }
+
+  &__btn {
+    min-width: 267px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .hero {
+    display: grid;
+    grid-template-columns: 55% 45%;
+
+    &__container {
+      padding: 32px;
+      margin: 0px 24px 0px 0px;
+      max-width: 100%;
+    }
+
+    &__text {
+      @include mix.font(400, 16px, 1.38);
+    }
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .hero {
+    &__container {
+      padding-top: 98px;
+      padding-left: 64px;
+    }
+
+    &__text {
+      margin-bottom: 64px;
+    }
+  }
+}

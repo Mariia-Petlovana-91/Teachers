@@ -6,12 +6,13 @@
 .title {
   &__first {
     margin-bottom: 24px;
-    @include mix.font(500, 24px, 1.33);
+    @include mix.font(500, 24px, 1.2);
   }
 
   &__first--span {
     @extend %flexCenter;
     width: fit-content;
+    display: inline-flex;
     height: func.calculateHeight(24px);
     padding: 0 3px;
     border-radius: 5px;
