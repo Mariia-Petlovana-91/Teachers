@@ -12,7 +12,7 @@ import MobMenu from './MobMenu';
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const visual = useMediaQuery({ minWidth: 768 });
-  const isLogged = true;
+  const isLogged = false;
   const onIsOpen = () => {
     setIsOpen(true);
   };

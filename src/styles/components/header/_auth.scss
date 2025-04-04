@@ -7,7 +7,7 @@
     @include mix.flex($justify: space-around, $gap: 16px);
   }
 
-  &__link {
+  &__btn {
     @extend %flexCenter;
 
     @include mix.font(600, 14px, 1.2);
@@ -22,7 +22,7 @@
     margin-right: 8px;
   }
 
-  &__link--registration {
+  &__btn--registration {
     background-color: vars.$woodsmoke;
     padding: 10px 20px 10px 20px;
     border-radius: 12px;

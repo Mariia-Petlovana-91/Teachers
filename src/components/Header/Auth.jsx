@@ -1,21 +1,15 @@
-import { NavLink } from 'react-router-dom';
-
 import { FiLogIn } from 'react-icons/fi';
 
 const Auth = () => {
   return (
     <div className="auth__container">
-      <NavLink to="/login" className="link auth__link" type="button">
+      <button className="auth__btn" type="button">
         <FiLogIn className="icon auth__icon" />
         Log in
-      </NavLink>
-      <NavLink
-        to="/register"
-        className="link auth__link auth__link--registration"
-        type="button"
-      >
+      </button>
+      <button className="auth__btn auth__btn--registration" type="button">
         Registration
-      </NavLink>
+      </button>
     </div>
   );
 };
