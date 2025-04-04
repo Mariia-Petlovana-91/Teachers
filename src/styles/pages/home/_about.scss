@@ -1,0 +1,66 @@
+@use '../../utilities/variables' as vars;
+@use '../../utilities/placeholder';
+@use '../../utilities/mixin' as mix;
+
+.about {
+  &__section {
+    border: 1px dashed vars.$summerGreen;
+    border-radius: 30px;
+    padding: 24px 48px;
+    max-width: 568px;
+    margin: auto auto 24px auto;
+  }
+
+  &__list {
+    width: fit-content;
+    margin: auto;
+  }
+
+  &__item {
+    margin-bottom: 18px;
+
+    &:last-child {
+      margin-bottom: 0px;
+    }
+  }
+
+  &__number {
+    @include mix.font(500, 28px, 1.14);
+  }
+
+  &__text {
+    @include mix.font(400, 14px, 1.29, $color: vars.$woodsmokeAlfa);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .about {
+    &__section {
+      padding: 40px 112px;
+      max-width: 100%;
+    }
+
+    &__list {
+      margin: 0px;
+      width: 100%;
+      @include mix.flex($justify: space-between, $gap: 24px, $wrap: wrap);
+    }
+
+    &__item {
+      margin-bottom: 0px;
+      @include mix.flex($gap: 10px);
+    }
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .about {
+    &__list {
+      @include mix.flex($gap: 100px);
+    }
+
+    &__list {
+      flex-wrap: nowrap;
+    }
+  }
+}
