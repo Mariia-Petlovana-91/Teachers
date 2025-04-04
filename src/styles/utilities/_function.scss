@@ -1,0 +1,3 @@
+@function calculateHeight($parentFontSize, $step: 10px) {
+  @return $parentFontSize - $step;
+}

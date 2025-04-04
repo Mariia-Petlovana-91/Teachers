@@ -4,9 +4,9 @@ const Hero = () => {
   return (
     <section className="hero__container">
       <div className="hero__descript">
-        <h1 className="firstTitle">
+        <h1 className="title__first">
           Unlock your potential with the best{' '}
-          <span className="firstTitle__span">language</span> tutors
+          <span className="title__first--span">language</span> tutors
         </h1>
         <p className="hero__text">
           Embark on an Exciting Language Journey with Expert Language Tutors: Elevate your
