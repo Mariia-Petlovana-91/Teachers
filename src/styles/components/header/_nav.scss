@@ -1,3 +1,42 @@
 @use '../../utilities/variables' as vars;
 @use '../../utilities/placeholder';
 @use '../../utilities/mixin' as mix;
+
+.nav {
+  &__list {
+    margin-bottom: 32px;
+  }
+
+  &__item {
+    margin-bottom: 16px;
+
+    &:last-child {
+      margin-bottom: 0px;
+    }
+  }
+
+  &__link {
+    @include mix.font(400, 16px, 1.25);
+
+    &:hover,
+    &:focus {
+      color: vars.$summerGreen;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .nav {
+    &__list {
+      @include mix.flex($gap: 28px);
+      margin-bottom: 0px;
+    }
+
+    &__item {
+      margin-bottom: 0px;
+    }
+
+    &__link {
+    }
+  }
+}

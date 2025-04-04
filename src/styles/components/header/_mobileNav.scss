@@ -1,0 +1,26 @@
+@use '../../utilities/variables' as vars;
+@use '../../utilities/mixin' as mix;
+@use '../../utilities/placeholder';
+
+.mob {
+  &__container {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+
+    background-color: vars.$white;
+    padding: 24px;
+  }
+
+  &__head {
+    @include mix.flex($justify: flex-end);
+    margin-bottom: 32px;
+  }
+
+  &__btn {
+    @extend %flexCenter;
+    padding: 0px;
+  }
+}

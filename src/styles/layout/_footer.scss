@@ -3,49 +3,47 @@
 @use '../utilities/mixin' as mix;
 
 .footer {
-  padding-left: 24px;
-  padding-right: 24px;
-}
-
-.footer__title {
-  @include mix.flex($justify: flex-start, $gap: 10px);
-  @include mix.font(500, 16px, 1.25);
-  margin-bottom: 10px;
-}
-
-.footer__link {
-  @include mix.font(400, 14px, 1.2);
-
-  transition: vars.$transiyionColors;
-  &:hover,
-  &:focus {
-    color: vars.$parisWhite;
+  &__title {
+    @include mix.flex($justify: flex-start, $gap: 10px);
+    @include mix.font(500, 16px, 1.25);
+    margin-bottom: 10px;
   }
-}
 
-.footer__img {
-  width: 20px;
-  height: 20px;
-}
+  &__link {
+    @include mix.font(400, 14px, 1.2);
 
-.footer__list {
-  @include mix.flex($justify: space-between, $gap: 8px, $wrap: wrap);
-}
+    transition: vars.$transitionAll;
 
-.footer__item {
-  @include mix.font(400, 14px, 1.2);
+    &:hover,
+    &:focus {
+      color: vars.$parisWhite;
+    }
+  }
+
+  &__img {
+    width: 20px;
+    height: 20px;
+  }
+
+  &__list {
+    @include mix.flex($justify: space-between, $gap: 8px, $wrap: wrap);
+  }
+
+  &__item {
+    @include mix.font(400, 14px, 1.2);
+  }
 }
 
 @media (min-width: 768px) {
   .footer {
-    padding-left: 60px;
-    padding-right: 60px;
+    padding-left: 32px;
+    padding-right: 32px;
   }
 }
 
 @media (min-width: 1440px) {
   .footer {
-    padding-left: 128px;
-    padding-right: 128px;
+    padding-left: 64px;
+    padding-right: 64px;
   }
 }

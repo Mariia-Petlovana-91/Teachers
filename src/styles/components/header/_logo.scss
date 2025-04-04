@@ -2,26 +2,30 @@
 @use '../../utilities/placeholder';
 @use '../../utilities/mixin' as mix;
 
-.logo__container {
-  @include mix.flex($justify: flex-start, $gap: 10px);
-}
-
-.logo__img {
-  width: 20px;
-  height: 20px;
-}
-
-.logo__name {
-  @include mix.font(400, 14px, 1.2);
-}
-
-@media screen and (min-width: 768px) {
-  .logo__img {
-    width: 28px;
-    height: 28px;
+.logo {
+  &__container {
+    @include mix.flex($justify: flex-start, $gap: 10px);
   }
 
-  .logo__name {
-    @include mix.font(500, 16px, 1.25);
+  &__img {
+    width: 20px;
+    height: 20px;
+  }
+
+  &__name {
+    @include mix.font(400, 14px, 1.2);
+  }
+
+  @media screen and (min-width: 768px) {
+    .logo {
+      &__img {
+        width: 28px;
+        height: 28px;
+      }
+
+      &__name {
+        @include mix.font(500, 16px, 1.25);
+      }
+    }
   }
 }

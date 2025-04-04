@@ -1,0 +1,5 @@
+@use '../utilities/variables' as vars;
+
+.link {
+  transition: vars.$transitionAll;
+}
