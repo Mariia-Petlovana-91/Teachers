@@ -1,6 +1,6 @@
 @use '../utilities/variables' as vars;
 
-@mixin font($weight, $size, $line-height, $color: vars.$woodsmoke, $letter-spacing: 0%) {
+@mixin font($weight, $size, $line-height, $color: vars.$woodsmoke, $letter-spacing: 0px) {
   font-weight: $weight;
   font-size: $size;
   line-height: $line-height;
@@ -13,13 +13,13 @@
   $items: center,
   $gap: 0px,
   $display: flex,
-  $derection: row,
+  $direction: row,
   $wrap: nowrap
 ) {
   justify-content: $justify;
   align-items: $items;
   gap: $gap;
   display: $display;
-  flex-direction: $derection;
+  flex-direction: $direction;
   flex-wrap: $wrap;
 }

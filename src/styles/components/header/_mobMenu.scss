@@ -9,18 +9,26 @@
     position: absolute;
     top: 0px;
     left: 0px;
-
     background-color: vars.$white;
     padding: 24px;
   }
 
   &__head {
-    @include mix.flex($justify: flex-end);
+    @include mix.flex($justify: space-between);
     margin-bottom: 32px;
   }
 
   &__btn {
     @extend %flexCenter;
+    margin-left: auto;
+    border: solid 1px vars.$summerGreen;
+    border-radius: 4px;
     padding: 0px;
+    transition: vars.$transitionAll;
+
+    &:hover,
+    &:focus {
+      background-color: vars.$summerGreen;
+    }
   }
 }

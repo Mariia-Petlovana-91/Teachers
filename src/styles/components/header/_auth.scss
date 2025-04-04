@@ -1,3 +1,48 @@
 @use '../../utilities/variables' as vars;
 @use '../../utilities/placeholder';
 @use '../../utilities/mixin' as mix;
+
+.auth {
+  &__container {
+    @include mix.flex($justify: space-around, $gap: 16px);
+  }
+
+  &__link {
+    @extend %flexCenter;
+
+    @include mix.font(600, 14px, 1.2);
+
+    &:hover,
+    &:focus {
+      color: vars.$parisWhite;
+    }
+  }
+
+  &__icon {
+    margin-right: 8px;
+  }
+
+  &__link--registration {
+    background-color: vars.$woodsmoke;
+    padding: 10px 20px 10px 20px;
+    border-radius: 12px;
+    color: vars.$white;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .auth {
+    &__container {
+      @include mix.flex($justify: space-around, $gap: 16px);
+    }
+
+    &__link {
+      @include mix.font(700, 16px, 1.25);
+    }
+
+    &__link--registration {
+      padding: 14px 39px 14px 39px;
+      color: vars.$white;
+    }
+  }
+}

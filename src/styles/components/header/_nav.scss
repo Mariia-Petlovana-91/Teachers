@@ -17,7 +17,6 @@
 
   &__link {
     @include mix.font(400, 16px, 1.25);
-
     &:hover,
     &:focus {
       color: vars.$summerGreen;
@@ -34,9 +33,6 @@
 
     &__item {
       margin-bottom: 0px;
-    }
-
-    &__link {
     }
   }
 }

@@ -6,10 +6,14 @@ const Auth = () => {
   return (
     <div className="auth__container">
       <NavLink to="/login" className="link auth__link" type="button">
-        <FiLogIn className="icon" />
+        <FiLogIn className="icon auth__icon" />
         Log in
       </NavLink>
-      <NavLink to="/register" className="link auth__link" type="button">
+      <NavLink
+        to="/register"
+        className="link auth__link auth__link--registration"
+        type="button"
+      >
         Registration
       </NavLink>
     </div>

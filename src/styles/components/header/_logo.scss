@@ -13,19 +13,19 @@
   }
 
   &__name {
-    @include mix.font(400, 14px, 1.2);
+    @include mix.font(500, 16px, 1.2);
   }
+}
 
-  @media screen and (min-width: 768px) {
-    .logo {
-      &__img {
-        width: 28px;
-        height: 28px;
-      }
+@media screen and (min-width: 768px) {
+  .logo {
+    &__img {
+      width: 28px;
+      height: 28px;
+    }
 
-      &__name {
-        @include mix.font(500, 16px, 1.25);
-      }
+    &__name {
+      @include mix.font(500, 20px, 1.25);
     }
   }
 }

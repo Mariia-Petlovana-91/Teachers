@@ -18,3 +18,8 @@ a:hover .icon,
 a:focus .icon {
   color: vars.$parisWhite;
 }
+
+button:hover .icon,
+button:focus .icon {
+  color: vars.$parisWhite;
+}

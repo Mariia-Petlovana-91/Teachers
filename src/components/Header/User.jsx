@@ -4,11 +4,15 @@ import { useState } from 'react';
 import { FiLogOut } from 'react-icons/fi';
 
 const User = () => {
-  const [userName, setUserName] = useState(null);
+  const [userName, setUserName] = useState('U');
   return (
     <div className="user__container">
-      <FiLogOut className="icon" />
-      <p className="user__name">{userName}</p>
+      <button className="user__btn" type="button">
+        <FiLogOut className="icon" />
+      </button>
+      <div className="user__block">
+        <p className="user__name">{userName}</p>
+      </div>
     </div>
   );
 };

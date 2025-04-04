@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 
 import { FiMenu } from 'react-icons/fi';
@@ -9,16 +10,20 @@ import User from './User';
 import MobMenu from './MobMenu';
 
 const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
   const visual = useMediaQuery({ minWidth: 768 });
-  const isLogged = false;
+  const isLogged = true;
+  const onIsOpen = () => {
+    setIsOpen(true);
+  };
   return (
     <header className="header">
       <Logo />
       {visual && <Navigation />}
       {visual && !isLogged && <Auth />}
       {visual && isLogged && <User />}
-      {!visual && <FiMenu className="icon" />}
-      {/* <MobMenu /> */}
+      {!visual && <FiMenu className="icon" onClick={onIsOpen} />}
+      {isOpen && <MobMenu setIsOpen={setIsOpen} />}
     </header>
   );
 };
