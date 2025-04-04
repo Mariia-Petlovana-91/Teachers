@@ -5,6 +5,10 @@
   height: 16px;
   color: vars.$summerGreen;
   transition: vars.$transitionAll;
+
+  &__form {
+    transition: vars.$transitionAll;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -21,5 +25,10 @@ a:focus .icon {
 
 button:hover .icon,
 button:focus .icon {
+  color: vars.$parisWhite;
+}
+
+button:hover .icon__form,
+button:focus .icon__form {
   color: vars.$parisWhite;
 }

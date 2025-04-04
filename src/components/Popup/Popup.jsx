@@ -1,5 +1,5 @@
 const Popup = ({ children }) => {
-  return <div className="popap">{children}</div>;
+  return <div className="popup">{children}</div>;
 };
 
 export default Popup;

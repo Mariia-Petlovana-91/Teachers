@@ -1,0 +1,13 @@
+@use '../utilities/variables' as vars;
+@use '../utilities/placeholder';
+
+.popup {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  background-color: vars.$parisWhite;
+
+  @extend %flexCenter;
+}

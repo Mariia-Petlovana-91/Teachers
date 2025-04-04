@@ -1,0 +1,88 @@
+import { useRef, useEffect, useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+
+import { schemaValidationLogin } from '../../utils/validations';
+import { onClickRef } from '../../utils/onClickRef';
+
+import { RiCloseFill } from 'react-icons/ri';
+import { FiEye, FiEyeOff } from 'react-icons/fi';
+
+import Popup from '../Popup/Popup';
+
+const FormLogin = ({ setIsOpenLogIn }) => {
+  const formRef = useRef(null);
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+
+  useEffect(() => {
+    const handleClick = (event) => {
+      onClickRef(setIsOpenLogIn, formRef, event);
+    };
+
+    document.addEventListener('click', handleClick, { capture: true });
+    return () => {
+      document.removeEventListener('click', handleClick, { capture: true });
+    };
+  }, [setIsOpenLogIn]);
+
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schemaValidationLogin),
+  });
+
+  const onSubmit = async (data) => {
+    await postData(data);
+    reset();
+    setIsOpenLogIn(false);
+  };
+
+  return (
+    <Popup>
+      <form ref={formRef} className="form" onSubmit={handleSubmit(onSubmit)}>
+        <button
+          className="form__btn--icon"
+          type="button"
+          onClick={() => setIsOpenLogIn(false)}
+        >
+          <RiCloseFill className="icon__form" />
+        </button>
+        <h2 className="tittle__second">Log In</h2>
+        <p className="form__desctipt">
+          Welcome back! Please enter your credentials to access your account and continue
+          your search for an teacher.
+        </p>
+        <input className="form__input" {...register('email')} placeholder="Email" />
+        {errors.email && <p className="form__error">{errors.email.message}</p>}
+        <div className="form__password">
+          <input
+            className="form__input"
+            type={isPasswordVisible ? 'text' : 'password'}
+            {...register('password')}
+            placeholder="Password"
+          />
+          <button
+            className="form__btn--icon"
+            type="button"
+            onClick={() => setIsPasswordVisible(!isPasswordVisible)}
+          >
+            {isPasswordVisible ? (
+              <FiEye className="icon__form" />
+            ) : (
+              <FiEyeOff className="icon__form" />
+            )}
+          </button>
+        </div>
+        {errors.password && <p className="form__error">{errors.password.message}</p>}
+        <button className="btn form__btn" type="submit">
+          Sign Up
+        </button>
+      </form>
+    </Popup>
+  );
+};
+
+export default FormLogin;

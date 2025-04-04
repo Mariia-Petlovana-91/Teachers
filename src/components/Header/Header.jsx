@@ -9,7 +9,7 @@ import Auth from './Auth';
 import User from './User';
 import MobMenu from './MobMenu';
 
-const Header = () => {
+const Header = ({ setIsOpenLogIn, setIsOpenRegist }) => {
   const [isOpen, setIsOpen] = useState(false);
   const visual = useMediaQuery({ minWidth: 768 });
   const isLogged = false;
@@ -20,7 +20,9 @@ const Header = () => {
     <header className="header">
       <Logo />
       {visual && <Navigation />}
-      {visual && !isLogged && <Auth />}
+      {visual && !isLogged && (
+        <Auth setIsOpenLogIn={setIsOpenLogIn} setIsOpenRegist={setIsOpenRegist} />
+      )}
       {visual && isLogged && <User />}
       {!visual && <FiMenu className="icon" onClick={onIsOpen} />}
       {isOpen && <MobMenu setIsOpen={setIsOpen} />}
