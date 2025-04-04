@@ -6,7 +6,7 @@ import Logo from './Logo';
 import Navigation from './Navigation';
 import Auth from './Auth';
 import User from './User';
-import MobileNav from './MobileNav';
+import MobMenu from './MobMenu';
 
 const Header = () => {
   const visual = useMediaQuery({ minWidth: 768 });
@@ -18,7 +18,7 @@ const Header = () => {
       {visual && !isLogged && <Auth />}
       {visual && isLogged && <User />}
       {!visual && <FiMenu className="icon" />}
-      {/* <MobileNav /> */}
+      {/* <MobMenu /> */}
     </header>
   );
 };

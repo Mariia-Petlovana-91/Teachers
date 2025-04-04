@@ -3,7 +3,7 @@ import { RiCloseFill } from 'react-icons/ri';
 import Navigation from './Navigation';
 import Auth from './Auth';
 
-const MobileNav = () => {
+const MobMenu = () => {
   return (
     <div className="mob__container">
       <div className="mob__head">
@@ -16,4 +16,4 @@ const MobileNav = () => {
     </div>
   );
 };
-export default MobileNav;
+export default MobMenu;
