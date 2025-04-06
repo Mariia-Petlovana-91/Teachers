@@ -4,7 +4,7 @@ const Auth = ({ setIsOpenLogIn, setIsOpenRegist }) => {
   return (
     <div className="auth__container">
       <button
-        className="auth__btn"
+        className="auth__btn auth__btn--login"
         type="button"
         onClick={() => {
           setIsOpenLogIn(true);

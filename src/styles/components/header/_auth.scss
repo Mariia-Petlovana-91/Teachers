@@ -12,6 +12,9 @@
 
     @include mix.font(600, 14px, 1.2);
 
+    padding: 10px 20px 10px 20px;
+    border-radius: 12px;
+
     &:hover,
     &:focus {
       color: vars.$parisWhite;
@@ -20,6 +23,13 @@
 
   &__icon {
     margin-right: 8px;
+  }
+
+  &__btn--login {
+    &:hover,
+    &:focus {
+      background-color: vars.$woodsmoke;
+    }
   }
 
   &__btn--registration {

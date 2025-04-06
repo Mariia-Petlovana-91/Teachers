@@ -50,24 +50,35 @@ const FormRestration = ({ setIsOpenRegist }) => {
         >
           <RiCloseFill className="icon__form" />
         </button>
-        <h2 className="tittle__second">Registration</h2>
-        <p className="form__desctipt">
+        <h2 className="tittle__second form__title">Registration</h2>
+        <p className="form__deskript">
           Thank you for your interest in our platform! In order to register, we need some
           information. Please provide us with the following information
         </p>
-        <input className="form__input" {...register('name')} placeholder="Name" />
+        <input
+          className="form__input"
+          {...register('name')}
+          placeholder="Name"
+          type="text"
+        />
         {errors.name && <p className="form__error">{errors.name.message}</p>}
-        <input className="form__input" {...register('email')} placeholder="Email" />
+        <input
+          className="form__input"
+          {...register('email')}
+          placeholder="Email"
+          type="text"
+        />
         {errors.email && <p className="form__error">{errors.email.message}</p>}
         <div className="form__password">
           <input
+            id="password"
             className="form__input"
             type={isPasswordVisible ? 'text' : 'password'}
             {...register('password')}
             placeholder="Password"
           />
           <button
-            className="form__btn--icon"
+            className="form__btn--eyes"
             type="button"
             onClick={() => setIsPasswordVisible(!isPasswordVisible)}
           >

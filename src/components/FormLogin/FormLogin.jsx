@@ -50,12 +50,17 @@ const FormLogin = ({ setIsOpenLogIn }) => {
         >
           <RiCloseFill className="icon__form" />
         </button>
-        <h2 className="tittle__second">Log In</h2>
-        <p className="form__desctipt">
+        <h2 className="tittle__second form__title">Log In</h2>
+        <p className="form__deskript">
           Welcome back! Please enter your credentials to access your account and continue
           your search for an teacher.
         </p>
-        <input className="form__input" {...register('email')} placeholder="Email" />
+        <input
+          className="form__input"
+          {...register('email')}
+          placeholder="Email"
+          type="text"
+        />
         {errors.email && <p className="form__error">{errors.email.message}</p>}
         <div className="form__password">
           <input
@@ -65,7 +70,7 @@ const FormLogin = ({ setIsOpenLogIn }) => {
             placeholder="Password"
           />
           <button
-            className="form__btn--icon"
+            className="form__btn--eyes"
             type="button"
             onClick={() => setIsPasswordVisible(!isPasswordVisible)}
           >

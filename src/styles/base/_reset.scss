@@ -44,6 +44,11 @@ img {
   height: auto;
 }
 
+input {
+  outline: none;
+  transition: vars.$transitionAll;
+}
+
 ::-webkit-scrollbar {
   width: 24px;
   background: var(--whiteOriginColor);

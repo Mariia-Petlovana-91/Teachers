@@ -1,0 +1,77 @@
+@use '../utilities/variables' as vars;
+@use '../utilities/mixin' as mix;
+@use '../utilities/placeholder';
+
+.form {
+  padding: 20px;
+  background-color: vars.$white;
+  border-radius: 30px;
+
+  &__btn--icon {
+    @extend %flexCenter;
+    margin-left: auto;
+    padding: 0px;
+    width: 32px;
+    height: 32px;
+    margin-bottom: 12px;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__deskript {
+    @include mix.font(400, 16px, 1.38, vars.$woodsmokeAlfa);
+    margin-bottom: 40px;
+  }
+
+  &__input {
+    display: block;
+    border: 1px solid #1214171a;
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin-bottom: 18px;
+    width: 100%;
+    @include mix.font(400, 16px, 1.38, vars.$woodsmokeAlfa);
+
+    &:hover,
+    &:focus {
+      border-color: vars.$summerGreen;
+    }
+  }
+
+  .form__input:last-of-type-password {
+    margin-bottom: 0;
+  }
+
+  &__error {
+    @include mix.font(400, 12px, 1.25, vars.$error);
+    margin-bottom: 8px;
+  }
+
+  &__password {
+    position: relative;
+    margin-bottom: 40px;
+  }
+
+  &__btn--eyes {
+    width: 18px;
+    height: 18px;
+    padding: 0px;
+    position: absolute;
+    top: 50%;
+    right: 18px;
+    transform: translateY(-50%);
+  }
+
+  &__btn {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .form {
+    padding: 20px 64px 64px 64px;
+    max-width: 566px;
+  }
+}
