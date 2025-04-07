@@ -1,4 +1,5 @@
 import { useRef, useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 
@@ -7,6 +8,8 @@ import { onClickRef } from '../../utils/onClickRef';
 
 import { RiCloseFill } from 'react-icons/ri';
 import { FiEye, FiEyeOff } from 'react-icons/fi';
+
+import { registerUser } from '../../redux/auth/operation';
 
 import Popup from '../Popup/Popup';
 
@@ -34,8 +37,15 @@ const FormRestration = ({ setIsOpenRegist }) => {
     resolver: yupResolver(schemaValidationRegister),
   });
 
+  const dispatch = useDispatch();
   const onSubmit = async (data) => {
-    await postData(data);
+    await dispatch(
+      registerUser({
+        email: data.email,
+        password: data.password,
+        name: data.name,
+      }),
+    );
     reset();
     setIsOpenRegist(false);
   };
@@ -76,6 +86,7 @@ const FormRestration = ({ setIsOpenRegist }) => {
             type={isPasswordVisible ? 'text' : 'password'}
             {...register('password')}
             placeholder="Password"
+            autoСomplete="new-password"
           />
           <button
             className="form__btn--eyes"

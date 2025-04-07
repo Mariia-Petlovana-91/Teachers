@@ -35,7 +35,7 @@ const FormLogin = ({ setIsOpenLogIn }) => {
   });
 
   const onSubmit = async (data) => {
-    await postData(data);
+    // await createUserData(data);
     reset();
     setIsOpenLogIn(false);
   };
@@ -68,6 +68,7 @@ const FormLogin = ({ setIsOpenLogIn }) => {
             type={isPasswordVisible ? 'text' : 'password'}
             {...register('password')}
             placeholder="Password"
+            autoСomplete="current-password"
           />
           <button
             className="form__btn--eyes"
