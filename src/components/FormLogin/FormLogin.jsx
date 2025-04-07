@@ -1,4 +1,5 @@
 import { useRef, useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 
@@ -8,11 +9,14 @@ import { onClickRef } from '../../utils/onClickRef';
 import { RiCloseFill } from 'react-icons/ri';
 import { FiEye, FiEyeOff } from 'react-icons/fi';
 
+import { loginUser } from '../../redux/auth/operation.js';
+
 import Popup from '../Popup/Popup';
 
 const FormLogin = ({ setIsOpenLogIn }) => {
   const formRef = useRef(null);
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const handleClick = (event) => {
@@ -35,7 +39,7 @@ const FormLogin = ({ setIsOpenLogIn }) => {
   });
 
   const onSubmit = async (data) => {
-    // await createUserData(data);
+    await dispatch(loginUser(data));
     reset();
     setIsOpenLogIn(false);
   };
@@ -60,6 +64,7 @@ const FormLogin = ({ setIsOpenLogIn }) => {
           {...register('email')}
           placeholder="Email"
           type="text"
+          autoComplete="off"
         />
         {errors.email && <p className="form__error">{errors.email.message}</p>}
         <div className="form__password">
@@ -68,7 +73,7 @@ const FormLogin = ({ setIsOpenLogIn }) => {
             type={isPasswordVisible ? 'text' : 'password'}
             {...register('password')}
             placeholder="Password"
-            autoСomplete="current-password"
+            autoComplete="off"
           />
           <button
             className="form__btn--eyes"

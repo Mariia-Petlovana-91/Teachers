@@ -70,6 +70,7 @@ const FormRestration = ({ setIsOpenRegist }) => {
           {...register('name')}
           placeholder="Name"
           type="text"
+          autoComplete="off"
         />
         {errors.name && <p className="form__error">{errors.name.message}</p>}
         <input
@@ -77,6 +78,7 @@ const FormRestration = ({ setIsOpenRegist }) => {
           {...register('email')}
           placeholder="Email"
           type="text"
+          autoComplete="off"
         />
         {errors.email && <p className="form__error">{errors.email.message}</p>}
         <div className="form__password">
@@ -86,7 +88,7 @@ const FormRestration = ({ setIsOpenRegist }) => {
             type={isPasswordVisible ? 'text' : 'password'}
             {...register('password')}
             placeholder="Password"
-            autoСomplete="new-password"
+            autoComplete="off"
           />
           <button
             className="form__btn--eyes"
