@@ -1,3 +1,5 @@
+import { NavLink } from 'react-router-dom';
+
 import imgHero from '../../img/hero.svg';
 
 const Hero = () => {
@@ -13,9 +15,9 @@ const Hero = () => {
           language proficiency to new heights by connecting with highly qualified and
           experienced tutors.
         </p>
-        <button className="btn hero__btn" type="button">
+        <NavLink to="/teachers" className="btn hero__link">
           Get Started
-        </button>
+        </NavLink>
       </div>
       <img className="hero__img" src={imgHero} alt="hero image" />
     </section>
