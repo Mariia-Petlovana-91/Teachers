@@ -11,7 +11,7 @@ const popupSlice = createSlice({
   reducers: {
     openPopup: (state, action) => {
       state.isOpen = true;
-      state.modalType = action.payload.modalType;
+      state.modalType = action.payload;
     },
     closePopup: (state) => {
       state.isOpen = false;

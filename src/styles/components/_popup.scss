@@ -12,4 +12,26 @@
   background-color: vars.$parisWhite;
 
   @extend %flexCenter;
+
+  &__modal {
+    padding: 20px;
+    background-color: vars.$white;
+    border-radius: 30px;
+  }
+
+  &__btn--icon {
+    @extend %flexCenter;
+    margin-left: auto;
+    padding: 0px;
+    width: 32px;
+    height: 32px;
+    margin-bottom: 12px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .popup__modal {
+    padding: 20px 64px 64px 64px;
+    max-width: 566px;
+  }
 }

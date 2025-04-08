@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { RiCloseFill } from 'react-icons/ri';
@@ -31,13 +30,13 @@ const Popup = () => {
     }
   };
 
-  if (!isOpen) return null; // Додаємо перевірку, щоб не рендерити, якщо модалка закрита
+  if (!isOpen) return null;
 
   return (
     <div className="popup" onClick={onPopupClick}>
       <div className="popup__modal" onClick={(e) => e.stopPropagation()}>
         <button
-          className="form__btn--icon"
+          className="popup__btn--icon"
           type="button"
           onClick={() => dispatch(closePopup())}
         >

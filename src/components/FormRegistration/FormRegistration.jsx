@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -13,6 +14,7 @@ import { selectLoading } from '../../redux/auth/selectors.js';
 import Loader from '../../components/common/Loader.jsx';
 
 const FormRestration = () => {
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const isLoading = useSelector(selectLoading);
   const dispatch = useDispatch();
   const {

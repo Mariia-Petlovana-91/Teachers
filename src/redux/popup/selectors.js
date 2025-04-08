@@ -1,2 +1,2 @@
-export const selectOpen = (stata) => stata.popupData.isOpen;
-export const selectModalType = (stata) => stata.popupData.modalType;
+export const selectOpen = (state) => state.popupData.isOpen;
+export const selectModalType = (state) => state.popupData.modalType;
