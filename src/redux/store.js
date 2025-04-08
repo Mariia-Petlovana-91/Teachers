@@ -1,12 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-import popupReducer from './popup/slice';
-import authReducer from './auth/slice';
+import popupReducer from './popup/slice.js';
+import authReducer from './auth/slice.js';
+import teachersReducer from './teachers/slice.js';
 
 export const store = configureStore({
   reducer: {
-    authData: authReducer,
     popupData: popupReducer,
+    authData: authReducer,
+    teachersData: teachersReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
