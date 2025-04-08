@@ -5,8 +5,9 @@ import { FiMenu } from 'react-icons/fi';
 
 import { selectIsLoggedIn } from '../../redux/auth/selectors';
 import { setUser } from '../../redux/auth/slice';
-import { auth } from '../../api/firebase'; // Додати імпорт для auth
-import { onAuthStateChanged } from 'firebase/auth'; // Імпортуємо onAuthStateChanged
+
+import { auth } from '../../api/firebase';
+import { onAuthStateChanged } from 'firebase/auth';
 
 import Logo from './Logo';
 import Navigation from './Navigation';
@@ -14,7 +15,7 @@ import Auth from './Auth';
 import User from './User';
 import MobMenu from './MobMenu';
 
-const Header = ({ setIsOpenLogIn, setIsOpenRegist }) => {
+const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const visual = useMediaQuery({ minWidth: 768 });
   const isLogged = useSelector(selectIsLoggedIn);
@@ -40,20 +41,10 @@ const Header = ({ setIsOpenLogIn, setIsOpenRegist }) => {
     <header className="header">
       <Logo />
       {visual && <Navigation />}
-      {isLogged
-        ? visual && <User />
-        : visual && (
-            <Auth setIsOpenLogIn={setIsOpenLogIn} setIsOpenRegist={setIsOpenRegist} />
-          )}
+      {isLogged ? visual && <User /> : visual && <Auth />}
 
       {<FiMenu className="icon icon__menu" onClick={onIsOpen} />}
-      {isOpen && (
-        <MobMenu
-          setIsOpen={setIsOpen}
-          setIsOpenLogIn={setIsOpenLogIn}
-          setIsOpenRegist={setIsOpenRegist}
-        />
-      )}
+      {isOpen && <MobMenu setIsOpen={setIsOpen} />}
     </header>
   );
 };

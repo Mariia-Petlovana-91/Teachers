@@ -1,13 +1,18 @@
+import { useDispatch } from 'react-redux';
+
 import { FiLogIn } from 'react-icons/fi';
 
-const Auth = ({ setIsOpenLogIn, setIsOpenRegist }) => {
+import { openPopup } from '../../redux/popup/slice';
+
+const Auth = () => {
+  const dispatch = useDispatch();
   return (
     <div className="auth__container">
       <button
         className="auth__btn auth__btn--login"
         type="button"
         onClick={() => {
-          setIsOpenLogIn(true);
+          dispatch(openPopup('login'));
         }}
       >
         <FiLogIn className="icon auth__icon" />
@@ -17,7 +22,7 @@ const Auth = ({ setIsOpenLogIn, setIsOpenRegist }) => {
         className="auth__btn auth__btn--registration"
         type="button"
         onClick={() => {
-          setIsOpenRegist(true);
+          dispatch(openPopup('register'));
         }}
       >
         Registration

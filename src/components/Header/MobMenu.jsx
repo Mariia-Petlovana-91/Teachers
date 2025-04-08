@@ -8,7 +8,7 @@ import Navigation from './Navigation';
 import Auth from './Auth';
 import User from './User';
 
-const MobMenu = ({ setIsOpen, setIsOpenLogIn, setIsOpenRegist }) => {
+const MobMenu = ({ setIsOpen }) => {
   const isLogged = useSelector(selectIsLoggedIn);
   return (
     <div className="mob__container">
@@ -26,9 +26,7 @@ const MobMenu = ({ setIsOpen, setIsOpenLogIn, setIsOpenRegist }) => {
         </button>
       </div>
       <Navigation />
-      {!isLogged && (
-        <Auth setIsOpenLogIn={setIsOpenLogIn} setIsOpenRegist={setIsOpenRegist} />
-      )}
+      {!isLogged && <Auth />}
     </div>
   );
 };

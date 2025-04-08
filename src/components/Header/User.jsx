@@ -3,13 +3,15 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import { FiLogOut } from 'react-icons/fi';
 
-import { selectUser } from '../../redux/auth/selectors';
+import Loader from '../common/Loader';
 
+import { selectUser } from '../../redux/auth/selectors';
+import { selectLoading } from '../../redux/auth/selectors';
 import { logoutUser } from '../../redux/auth/operation';
-import { reload } from 'firebase/auth';
 
 const User = () => {
   const user = useSelector(selectUser);
+  const isLoader = useSelector(selectLoading);
   const dispatch = useDispatch();
   const [userName, setUserName] = useState('U');
 
@@ -31,6 +33,7 @@ const User = () => {
       <div className="user__block">
         <p className="user__name">{userName}</p>
       </div>
+      {isLoader && <Loader />}
     </div>
   );
 };
