@@ -4,6 +4,7 @@ import { Suspense, lazy } from 'react';
 import Layout from '../src/components/common/Layout';
 import Loader from './components/common/Loader';
 import Toast from './components/common/Toast';
+import Popup from './components/Popup/Popup';
 
 const Home = lazy(() => import('../src/pages/Home'));
 const Teachers = lazy(() => import('../src/pages/Teachers'));
@@ -23,6 +24,7 @@ export default function App() {
           </Route>
         </Routes>
       </Suspense>
+      <Popup />
       <Toast />
     </>
   );

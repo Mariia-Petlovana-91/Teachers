@@ -53,13 +53,6 @@ const FormRestration = ({ setIsOpenRegist }) => {
   return (
     <Popup>
       <form ref={formRef} className="form" onSubmit={handleSubmit(onSubmit)}>
-        <button
-          className="form__btn--icon"
-          type="button"
-          onClick={() => setIsOpenRegist(false)}
-        >
-          <RiCloseFill className="icon__form" />
-        </button>
         <h2 className="tittle__second form__title">Registration</h2>
         <p className="form__deskript">
           Thank you for your interest in our platform! In order to register, we need some

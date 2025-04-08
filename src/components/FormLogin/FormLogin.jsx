@@ -6,7 +6,6 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { schemaValidationLogin } from '../../utils/validations';
 import { onClickRef } from '../../utils/onClickRef';
 
-import { RiCloseFill } from 'react-icons/ri';
 import { FiEye, FiEyeOff } from 'react-icons/fi';
 
 import { loginUser } from '../../redux/auth/operation.js';
