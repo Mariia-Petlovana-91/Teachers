@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 
-import imgHero from '../../img/hero.svg';
+import imgHero from '../../img/hero.png';
 
 const Hero = () => {
   return (
