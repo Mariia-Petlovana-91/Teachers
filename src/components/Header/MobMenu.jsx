@@ -1,3 +1,5 @@
+import { useEffect, useRef } from 'react';
+import { useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 import { RiCloseFill } from 'react-icons/ri';
@@ -10,6 +12,15 @@ import User from './User';
 
 const MobMenu = ({ setIsOpen }) => {
   const isLogged = useSelector(selectIsLoggedIn);
+  const location = useLocation();
+  const prevLocation = useRef(location.pathname);
+
+  useEffect(() => {
+    if (prevLocation.current !== location.pathname) {
+      setIsOpen(false);
+    }
+    prevLocation.current = location.pathname;
+  }, [location]);
   return (
     <div className="mob__container">
       <div className="mob__head">
