@@ -5,10 +5,11 @@ import Layout from '../src/components/common/Layout';
 import Loader from './components/common/Loader';
 import Toast from './components/common/Toast';
 import Popup from './components/Popup/Popup';
+import PrivateRout from './components/PrivateRout';
 
 const Home = lazy(() => import('../src/pages/Home'));
 const Teachers = lazy(() => import('../src/pages/Teachers'));
-const Favorite = lazy(() => import('../src/pages/Favorites'));
+const Favorites = lazy(() => import('../src/pages/Favorites'));
 const NotFound = lazy(() => import('../src/pages/NotFound'));
 
 export default function App() {
@@ -19,7 +20,9 @@ export default function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="teachers" element={<Teachers />} />
-            <Route path="favorite" element={<Favorite />} />
+            <Route element={<PrivateRout />}>
+              <Route path="favorite" element={<Favorites />} />
+            </Route>
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>

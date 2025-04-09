@@ -1,3 +1,5 @@
-const Favorites = () => {};
+const Favorites = () => {
+  return <></>;
+};
 
 export default Favorites;
