@@ -28,7 +28,6 @@ const FormLogin = () => {
   const onSubmit = async (data) => {
     await dispatch(loginUser(data));
     reset();
-    setIsOpenLogIn(false);
     dispatch(closePopup());
   };
 

@@ -18,8 +18,6 @@ createRoot(document.getElementById('root')).render(
   </StrictMode>,
 );
 
-// import { FaChevronDown } from 'react-icons/fa6';
-// import { FaChevronUp } from 'react-icons/fa6';
 // import { FaRegHeart } from 'react-icons/fa';
 // import { FaStar } from 'react-icons/fa';
 // import { FiBookOpen } from 'react-icons/fi';

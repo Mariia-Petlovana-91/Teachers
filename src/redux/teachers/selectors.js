@@ -4,3 +4,4 @@ export const selectLoading = (state) => state.teachersData.loading;
 export const selectError = (state) => state.teachersData.error;
 export const selectTotalPages = (state) => state.teachersData.totalPages;
 export const selectPage = (state) => state.teachersData.page;
+export const selectFilters = (state) => state.teachersData.filtersForSearch;

@@ -6,7 +6,7 @@ const TeacherList = ({ array }) => {
       {array.length !== 0 &&
         array.map((ar) => (
           <li className="teachers__item" key={ar.id}>
-            <TeacherItem teacher={ar} /> {/* Передаємо дані в TeacherItem */}
+            <TeacherItem teacher={ar} />
           </li>
         ))}
     </ul>

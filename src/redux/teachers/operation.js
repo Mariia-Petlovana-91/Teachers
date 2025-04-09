@@ -45,15 +45,20 @@ export const getTeachers = createAsyncThunk(
   },
 );
 
-const fetchTeachers = async () => {
-  const teachersRef = ref(database, 'teachers');
-  const snapshot = await get(teachersRef);
+export const getFilters = createAsyncThunk(
+  'searchData/getSearchData',
+  async (_, { rejectWithValue }) => {
+    try {
+      const filtersDataRef = ref(database, 'searchData');
+      const filtersSnapshot = await get(filtersDataRef);
+      const filters = filtersSnapshot.val();
 
-  if (snapshot.exists()) {
-    console.log('Teachers data:', snapshot.val());
-  } else {
-    console.log('No teachers found');
-  }
-};
-
-fetchTeachers();
+      console.log('Fetched filters:', filters);
+      return filters;
+    } catch (error) {
+      console.error('Error fetching filters:', error);
+      toast.error(error.message || 'Error fetching filters');
+      return rejectWithValue(error.message);
+    }
+  },
+);

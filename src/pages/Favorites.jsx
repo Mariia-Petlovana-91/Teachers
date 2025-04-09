@@ -1,5 +1,9 @@
 const Favorites = () => {
-  return <></>;
+  return (
+    <>
+      <h2>Favorites Page</h2>
+    </>
+  );
 };
 
 export default Favorites;
