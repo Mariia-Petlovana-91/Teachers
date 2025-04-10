@@ -1,4 +1,4 @@
-import { useDispatch } from 'react-redux'; // Імпортуємо useDispatch
+import { useDispatch } from 'react-redux';
 import {
   setSelectedLanguage,
   setSelectedLevel,
@@ -7,21 +7,18 @@ import {
 import CustomSelect from './CustomSelect';
 
 const Filters = ({ array }) => {
-  const dispatch = useDispatch(); // Використовуємо dispatch для виклику екшенів Redux
+  const dispatch = useDispatch();
 
   const handleLanguageSelect = (option) => {
-    console.log('Language selected:', option); // Перевірка в консолі
-    dispatch(setSelectedLanguage(option)); // Dispatch для оновлення стану Redux
+    dispatch(setSelectedLanguage(option));
   };
 
   const handleLevelSelect = (option) => {
-    console.log('Level selected:', option); // Перевірка в консолі
-    dispatch(setSelectedLevel(option)); // Dispatch для оновлення стану Redux
+    dispatch(setSelectedLevel(option));
   };
 
   const handlePriceSelect = (option) => {
-    console.log('Price selected:', option); // Перевірка в консолі
-    dispatch(setSelectedPrice(option)); // Dispatch для оновлення стану Redux
+    dispatch(setSelectedPrice(option));
   };
 
   return (
@@ -29,17 +26,17 @@ const Filters = ({ array }) => {
       <CustomSelect
         options={array.languages}
         label={'Languages'}
-        onSelect={handleLanguageSelect} // Передаємо функцію обробки для вибору мови
+        onSelect={handleLanguageSelect}
       />
       <CustomSelect
         options={array.levels}
         label={'Level of knowledge'}
-        onSelect={handleLevelSelect} // Передаємо функцію обробки для вибору рівня
+        onSelect={handleLevelSelect}
       />
       <CustomSelect
         options={array.prices}
         label={'Price'}
-        onSelect={handlePriceSelect} // Передаємо функцію обробки для вибору ціни
+        onSelect={handlePriceSelect}
         isPrice={true}
       />
     </div>
