@@ -7,6 +7,11 @@ import Toast from './components/common/Toast';
 import Popup from './components/Popup/Popup';
 import PrivateRout from './components/PrivateRout';
 
+// import Home from '../src/pages/Home';
+// import Teachers from '../src/pages/Teachers';
+// import Favorites from '../src/pages/Favorites';
+// import NotFound from '../src/pages/NotFound';
+
 const Home = lazy(() => import('../src/pages/Home'));
 const Teachers = lazy(() => import('../src/pages/Teachers'));
 const Favorites = lazy(() => import('../src/pages/Favorites'));

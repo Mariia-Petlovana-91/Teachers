@@ -17,9 +17,3 @@ createRoot(document.getElementById('root')).render(
     </BrowserRouter>
   </StrictMode>,
 );
-
-// import { FaRegHeart } from 'react-icons/fa';
-// import { FaStar } from 'react-icons/fa';
-// import { FiBookOpen } from 'react-icons/fi';
-
-// import { PiDotsThreeOutlineVerticalFill } from 'react-icons/pi';
