@@ -10,7 +10,7 @@ export const store = configureStore({
     popupData: popupReducer,
     authData: authReducer,
     teachersData: teachersReducer,
-    filterData: filterReducer,
+    filtersData: filterReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
