@@ -1,9 +1,19 @@
+import { useDispatch, useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
+
+import toast from 'react-hot-toast';
+
 import { FaStar } from 'react-icons/fa';
 import { FiBookOpen } from 'react-icons/fi';
 import { IoHeartSharp, IoHeartOutline } from 'react-icons/io5';
 
+import { selectIsLoggedIn } from '../../redux/auth/selectors';
+
+import { openPopup } from '../../redux/popup/slice';
+
 const TeacherItem = ({ teacher }) => {
+  const dispatch = useDispatch();
+  const isLgged = useSelector(selectIsLoggedIn);
   const [isFavorite, setIsFavorite] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   useEffect(() => {
@@ -29,6 +39,17 @@ const TeacherItem = ({ teacher }) => {
     setIsVisible(!isVisible);
   };
 
+  const onFavorite = () => {
+    if (isLgged) {
+      return toggleFavorite();
+    }
+    return toast.error('You not autorize🤷‍♀️.Please login or registration👌');
+  };
+
+  const onBook = () => {
+    localStorage.setItem('teacher', JSON.stringify(teacher));
+  };
+
   return (
     <>
       <img className="teacher__avatar" src={teacher.avatar_url} alt="teacher avatar" />
@@ -51,7 +72,7 @@ const TeacherItem = ({ teacher }) => {
               {teacher.price_per_hour}$
             </span>
           </p>
-          <button type="button" className="teachers__button" onClick={toggleFavorite}>
+          <button type="button" className="teachers__button" onClick={onFavorite}>
             {isFavorite ? (
               <IoHeartSharp className="icon__favorite icon__favorite--is" />
             ) : (
@@ -114,7 +135,14 @@ const TeacherItem = ({ teacher }) => {
         </ul>
 
         {isVisible && (
-          <button type="button" className="book-trial-btn">
+          <button
+            type="button"
+            className="btn teacher__btn"
+            onClick={() => {
+              dispatch(openPopup('book'));
+              onBook();
+            }}
+          >
             Book trial lesson
           </button>
         )}

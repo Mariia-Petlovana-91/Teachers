@@ -7,6 +7,7 @@ import { selectModalType, selectOpen } from '../../redux/popup/selectors.js';
 
 import FormLogin from '../FormLogin/FormLogin';
 import FormRegistration from '../FormRegistration/FormRegistration';
+import FormBook from '../FormBook/FormBook.jsx';
 
 const Popup = () => {
   const isOpen = useSelector(selectOpen);
@@ -19,6 +20,8 @@ const Popup = () => {
         return <FormLogin />;
       case 'register':
         return <FormRegistration />;
+      case 'book':
+        return <FormBook />;
       default:
         return null;
     }
@@ -26,6 +29,9 @@ const Popup = () => {
 
   const onPopupClick = (e) => {
     if (e.target.classList.contains('popup')) {
+      if (modalType === 'book') {
+        localStorage.removeItem('teacher');
+      }
       dispatch(closePopup());
     }
   };
