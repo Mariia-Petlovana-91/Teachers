@@ -14,7 +14,7 @@ const Layout = () => {
   return (
     <Container>
       <Header setIsOpenLogIn={setIsOpenLogIn} setIsOpenRegist={setIsOpenRegist} />
-      <main>
+      <main className="page">
         {isOpenLogIn && <FormLogin setIsOpenLogIn={setIsOpenLogIn} />}
         {isOpenRegist && <FormRestration setIsOpenRegist={setIsOpenRegist} />}
         <Outlet />

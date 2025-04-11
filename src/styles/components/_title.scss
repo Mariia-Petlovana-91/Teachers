@@ -31,5 +31,9 @@
     &__first--span {
       height: func.calculateHeight(48px);
     }
+
+    &__third {
+      @include mix.font(500, 24px, 1);
+    }
   }
 }

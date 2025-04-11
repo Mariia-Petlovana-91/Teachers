@@ -1,0 +1,40 @@
+@use '../utilities/variables' as vars;
+@use '../utilities/mixin' as mix;
+
+.page {
+  margin-bottom: 24px;
+
+  &__teachers {
+    background-color: vars.$backgroundTeachers;
+    padding: 20px;
+  }
+
+  &__teachers-btn {
+    margin: auto;
+    max-width: 183px;
+  }
+
+  &__teachers-end {
+    padding: 32px;
+    background-color: vars.$white;
+    border-radius: 24px;
+    text-align: center;
+    @include mix.font(700, 24px, 1);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .page {
+    &__teachers {
+      padding: 40px;
+    }
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .page {
+    &__teachers {
+      padding: 64px;
+    }
+  }
+}

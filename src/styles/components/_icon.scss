@@ -16,6 +16,21 @@
   &__filter {
     color: vars.$woodsmoke;
   }
+
+  &__teacher {
+    color: vars.$woodsmoke;
+    margin-right: 4px;
+  }
+
+  &__teacher--star {
+    color: vars.$summerGreen;
+  }
+
+  &__favorite {
+    width: 100%;
+    height: 100%;
+    color: vars.$woodsmoke;
+  }
 }
 
 @media screen and (min-width: 768px) {

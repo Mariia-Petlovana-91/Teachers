@@ -25,7 +25,6 @@ const Teachers = () => {
   const selectedLanguage = useSelector(selectLanguage);
   const selectedLevel = useSelector(selectLevel);
   const selectedPrice = useSelector(selectPrice);
-
   useEffect(() => {
     dispatch(getTeachers(null));
     dispatch(getFilters());
@@ -68,26 +67,31 @@ const Teachers = () => {
   };
 
   const isFilter = selectedLanguage || selectedPrice || selectedLevel === null;
-  console.log(isFilter);
   const finishArray = isFilter ? filterTeachers(teachers) : teachers;
 
   return (
     <div className="page__teachers">
       {isLoading && <Loader />}
-      <Filters array={filtersData} />
-      <TeacherList array={finishArray} />
-      {isFilter !== true ? (
-        <button className="teacher__button" type="button" onClick={onClear}>
-          Clear filter
-        </button>
-      ) : isMoreData ? (
-        <button className="teacher__button" type="button" onClick={loadMore}>
-          Load More
-        </button>
+
+      {error ? (
+        <div className="error">{error}</div>
       ) : (
-        <p className="teacher__end">End of the list</p>
+        <>
+          <Filters array={filtersData} />
+          <TeacherList array={finishArray} />
+          {isFilter !== true ? (
+            <button className="btn page__teachers-btn" type="button" onClick={onClear}>
+              Clear filter
+            </button>
+          ) : isMoreData ? (
+            <button className="btn page__teachers-btn" type="button" onClick={loadMore}>
+              Load More
+            </button>
+          ) : (
+            <div className="page__teachers-end">End of the list</div>
+          )}
+        </>
       )}
-      {error && <p className="teacher__error">{error}</p>}
     </div>
   );
 };

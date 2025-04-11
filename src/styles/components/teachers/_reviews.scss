@@ -1,0 +1,49 @@
+@use '../../utilities/variables' as vars;
+@use '../../utilities/mixin' as mix;
+
+.reviews {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+
+  &__about {
+    display: flex;
+    gap: 12px;
+  }
+
+  &__avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+  }
+
+  &__name {
+    @include mix.font(500, 16px, 1.5, vars.$naturalGray);
+  }
+
+  &__rating {
+    @include mix.font(500, 14px, 1.29);
+    margin-bottom: 10px;
+  }
+
+  &__comment {
+    @extend .reviews__name;
+    color: vars.$woodsmoke;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .reviews {
+    &__list {
+      gap: 32px;
+      margin-bottom: 32px;
+    }
+
+    &__rating {
+      margin-bottom: 16px;
+    }
+  }
+}

@@ -33,10 +33,6 @@ export const getTeachers = createAsyncThunk(
       const teachersSnapshot = await get(teachersQuery);
       const teachers = teachersSnapshot.val();
 
-      if (!teachers) {
-        return { teachers: [], lastKey: null };
-      }
-
       const teachersList = Object.entries(teachers).map(([id, data]) => ({
         id,
         ...data,
