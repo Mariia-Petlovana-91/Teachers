@@ -1,0 +1,18 @@
+@use '../utilities/variables' as vars;
+
+.page__teachers {
+  background-color: vars.$backgroundTeachers;
+  padding: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .page__teachers {
+    padding: 40px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .page__teachers {
+    padding: 64px;
+  }
+}

@@ -1,0 +1,75 @@
+@use '../../utilities/variables' as vars;
+@use '../../utilities/mixin' as mix;
+@use '../../utilities/placeholder';
+
+.filter {
+  margin-bottom: 20px;
+  &__general {
+    margin-bottom: 16px;
+
+    &:last-child {
+      margin-bottom: 0px;
+    }
+  }
+
+  &__label {
+    @include mix.font(500px, 14px, 1.29, vars.$naturalGray);
+    margin-bottom: 8px;
+  }
+
+  &__select {
+    max-height: 234px;
+  }
+
+  &__wrapper {
+    background-color: vars.$white;
+    border-radius: 14px;
+    padding: 14px 18px;
+    margin-bottom: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__text {
+    cursor: pointer;
+    @include mix.font(500, 18px, 1.1);
+  }
+
+  &__btn {
+    width: 20px;
+    height: 20px;
+    padding: 0px;
+  }
+
+  &__dropdown {
+    max-height: 160px;
+    background-color: vars.$white;
+    border-radius: 12px;
+    padding: 18px 14px;
+    overflow-x: hidden;
+  }
+
+  &__dropdown-item {
+    @extend .filter__text;
+    margin-bottom: 8px;
+    transition: vars.$transitionAll;
+    color: vars.$woodsmokeAlfaPlus;
+    &:hover,
+    &:focus {
+      color: vars.$woodsmoke;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .filter {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 32px;
+    &__general {
+      margin-bottom: 0px;
+    }
+  }
+}

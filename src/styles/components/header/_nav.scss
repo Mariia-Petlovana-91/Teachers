@@ -21,6 +21,10 @@
       color: vars.$summerGreen;
     }
   }
+
+  &__link--active {
+    color: vars.$summerGreen;
+  }
 }
 
 @media screen and (min-width: 768px) {

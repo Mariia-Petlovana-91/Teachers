@@ -13,14 +13,18 @@ const CustomSelect = ({ options, label, onSelect, isPrice = false }) => {
   };
 
   return (
-    <div className="filter">
+    <>
       <div className="filter__general">
         <label className="filter__label">{label}</label>
         <div className="filter__select">
           <div className="filter__wrapper" onClick={() => setIsOpen(!isOpen)}>
-            <div>{selectedOption || 'Add choose'}</div>
-            <button type="button" className="filter__icon">
-              {isOpen ? <FaChevronUp /> : <FaChevronDown />}
+            <p className="filter__text">{selectedOption || 'Choose'}</p>
+            <button type="button" className="filter__btn">
+              {isOpen ? (
+                <FaChevronUp className="icon__filter" />
+              ) : (
+                <FaChevronDown className="icon__filter" />
+              )}
             </button>
           </div>
           {isOpen && (
@@ -38,7 +42,7 @@ const CustomSelect = ({ options, label, onSelect, isPrice = false }) => {
           )}
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

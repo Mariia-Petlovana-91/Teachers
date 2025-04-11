@@ -72,7 +72,7 @@ const Teachers = () => {
   const finishArray = isFilter ? filterTeachers(teachers) : teachers;
 
   return (
-    <div>
+    <div className="page__teachers">
       {isLoading && <Loader />}
       <Filters array={filtersData} />
       <TeacherList array={finishArray} />

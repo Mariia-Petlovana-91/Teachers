@@ -10,18 +10,33 @@ const Navigation = () => {
     <nav className="nav">
       <ul className="nav__list">
         <li className="nav__item">
-          <NavLink to="/" className="link nav__link">
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              `link nav__link ${isActive ? 'nav__link--active' : ''}`
+            }
+          >
             Home
           </NavLink>
         </li>
         <li className="nav__item">
-          <NavLink to="teachers" className="link nav__link">
+          <NavLink
+            to="teachers"
+            className={({ isActive }) =>
+              `link nav__link ${isActive ? 'nav__link--active' : ''}`
+            }
+          >
             Teachers
           </NavLink>
         </li>
         {isLogged && (
           <li className="nav__item nav__item--private">
-            <NavLink to="/favorite" className="link nav__link">
+            <NavLink
+              to="/favorite"
+              className={({ isActive }) =>
+                `link nav__link ${isActive ? 'nav__link--active' : ''}`
+              }
+            >
               Favourite
             </NavLink>
           </li>
