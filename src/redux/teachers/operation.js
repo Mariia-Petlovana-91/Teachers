@@ -12,33 +12,15 @@ import { database } from '../../api/firebase.js';
 
 import toast from 'react-hot-toast';
 
-// export const getTeachers = createAsyncThunk(
-//   'teachers/fetchTeachers',
-//   async (_, { rejectWithValue }) => {
-//     try {
-//       const teachersDataRef = ref(database, 'teachers');
-//       const teachersSnapshot = await get(teachersDataRef);
-//       const teachers = teachersSnapshot.val();
-//       console.log(teachers);
-//       return teachers;
-//     } catch (error) {
-//       toast.error(error.message || 'Error fetching teachers');
-//       return rejectWithValue(error.message);
-//     }
-//   },
-// );
+const PAGE_SIZE = 4;
 
-const PAGE_SIZE = 4; // Кількість елементів на сторінці
-
-// Санка для отримання пагінованих даних
 export const getTeachers = createAsyncThunk(
   'teachers/fetchTeachers',
   async (lastKey, { rejectWithValue, getState }) => {
     try {
       const db = getDatabase();
-      const teachersDataRef = ref(db, 'teachers'); // Твоя база даних в Firebase
+      const teachersDataRef = ref(db, 'teachers');
 
-      // Якщо lastKey є, то завантажуємо наступну порцію даних
       const teachersQuery = lastKey
         ? query(
             teachersDataRef,
@@ -48,22 +30,18 @@ export const getTeachers = createAsyncThunk(
           )
         : query(teachersDataRef, orderByKey(), limitToFirst(PAGE_SIZE));
 
-      // Виконуємо запит до Firebase
       const teachersSnapshot = await get(teachersQuery);
       const teachers = teachersSnapshot.val();
 
-      // Якщо даних немає
       if (!teachers) {
         return { teachers: [], lastKey: null };
       }
 
-      // Перетворюємо дані у масив
       const teachersList = Object.entries(teachers).map(([id, data]) => ({
         id,
         ...data,
       }));
 
-      // Останній ключ (для пагінації)
       const lastKeyFetched = Object.keys(teachers).pop();
 
       return { teachers: teachersList, lastKey: lastKeyFetched };
