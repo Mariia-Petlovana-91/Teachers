@@ -36,7 +36,7 @@ after logging in. The app also allows users to book trial lessons with teachers.
 
 - `/` – **Home Page**
 - `/teachers` – **Teachers Page**
-- `/favorites` – **Favorites Page**
+- `/favorites` – **Favorites Page** `*` – **Not Found Page**
 
 ## ⚙️ Technologies
 
@@ -46,7 +46,6 @@ after logging in. The app also allows users to book trial lessons with teachers.
 | Vite            | Bundler          |
 | Redux Toolkit   | State management |
 | React Router    | Routing          |
-| Axios           | HTTP requests    |
 | React Hook Form | Form handling    |
 | Yup             | Validation       |
 | Firebase        | Authentication   |
@@ -54,6 +53,7 @@ after logging in. The app also allows users to book trial lessons with teachers.
 | ESLint          | Code linter      |
 | Prettier        | Code formatter   |
 | React Icons     | Icon library     |
+| Sass            | Preprocessor     |
 
 ## 🗄 API
 
@@ -69,13 +69,29 @@ This project uses Firebase Realtime Database to store and retrieve teacher data.
 
 ![Teachers Page](./public/teachers.png)
 
+## Read More Item
+
+![Read More Item](./public/teacerItemReadMore.png)
+
 ### Favorites Page
 
 ![Favorites Page](./public/favorites.png)
 
+### Not Found Page
+
+![Not Found Page](./public/notfound.png)
+
 ### Booking Form
 
 ![Booking Form](./public/booking-form.png)
+
+## LogIn Form
+
+![LogIn Form](./public/login.png)
+
+### Registration Form
+
+![Registration Form](./public/register.png)
 
 ### Technical Specifications
 
