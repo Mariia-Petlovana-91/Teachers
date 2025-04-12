@@ -28,6 +28,10 @@
     height: 100%;
     border-radius: 24px;
   }
+
+  &__favorite-not-item {
+    @extend .page__teachers-end;
+  }
 }
 
 @media screen and (min-width: 768px) {

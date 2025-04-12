@@ -1,29 +1,30 @@
 const RadioBtn = () => {
   return (
-    <div class="radio-group">
-      <div class="radio-wrapper">
-        <input type="radio" id="option2" name="radio" value="2" />
-        <label for="option2" class="radio-label"></label>
-        <span class="radio-text">Option 2</span>
-      </div>
+    <div className="radio-group">
+      <input type="radio" id="option1" name="radio" value="1" />
+      <label htmlFor="option1" className="radio-label">
+        Option 1
+      </label>
 
-      <div class="radio-wrapper">
-        <input type="radio" id="option3" name="radio" value="3" />
-        <label for="option3" class="radio-label"></label>
-        <span class="radio-text">Option 3</span>
-      </div>
+      <input type="radio" id="option2" name="radio" value="2" />
+      <label htmlFor="option2" className="radio-label">
+        Option 2
+      </label>
 
-      <div class="radio-wrapper">
-        <input type="radio" id="option4" name="radio" value="4" />
-        <label for="option4" class="radio-label"></label>
-        <span class="radio-text">Option 4</span>
-      </div>
+      <input type="radio" id="option3" name="radio" value="3" />
+      <label htmlFor="option3" className="radio-label">
+        Option 3
+      </label>
 
-      <div class="radio-wrapper">
-        <input type="radio" id="option5" name="radio" value="5" />
-        <label for="option5" class="radio-label"></label>
-        <span class="radio-text">Option 5</span>
-      </div>
+      <input type="radio" id="option4" name="radio" value="4" />
+      <label htmlFor="option4" className="radio-label">
+        Option 4
+      </label>
+
+      <input type="radio" id="option5" name="radio" value="5" />
+      <label htmlFor="option5" className="radio-label">
+        Option 5
+      </label>
     </div>
   );
 };
