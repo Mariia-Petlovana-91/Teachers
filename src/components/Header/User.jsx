@@ -22,6 +22,7 @@ const User = () => {
   return (
     <div className="user__container">
       <button
+        aria-label="Log out"
         className="user__btn"
         type="button"
         onClick={() => {

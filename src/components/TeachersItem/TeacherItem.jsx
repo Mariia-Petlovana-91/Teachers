@@ -55,7 +55,13 @@ const TeacherItem = ({ teacher }) => {
   return (
     <>
       <div className="teacher__avatar">
-        <img className="teacher__img" src={teacher.avatar_url} alt="teacher avatar" />
+        <img
+          className="teacher__img"
+          src={teacher.avatar_url}
+          alt="teacher avatar"
+          width="96px"
+          height="96px"
+        />
       </div>
 
       <div className="teacher__about">
@@ -81,7 +87,12 @@ const TeacherItem = ({ teacher }) => {
                 {teacher.price_per_hour}$
               </span>
             </p>
-            <button type="button" className="teachers__btn-favorite" onClick={onFavorite}>
+            <button
+              type="button"
+              className="teachers__btn-favorite"
+              onClick={onFavorite}
+              aria-label="Add tracher for favorites teachers"
+            >
               {isFavorite ? (
                 <FaHeart className="icon__favorite" />
               ) : (
@@ -126,6 +137,8 @@ const TeacherItem = ({ teacher }) => {
                             : defaultImg
                         }
                         alt="avatar user"
+                        width="44px"
+                        height="44px"
                       />
                       <div>
                         <p className="reviews__name">{review.reviewer_name}</p>

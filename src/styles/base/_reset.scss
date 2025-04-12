@@ -48,20 +48,3 @@ input {
   outline: none;
   transition: vars.$transitionAll;
 }
-
-::-webkit-scrollbar {
-  width: 24px;
-  background: var(--whiteOriginColor);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--grayLightColor);
-  border-radius: 12px;
-  border: 8px solid var(--whiteOriginColor);
-}
-
-@media (min-width: 768px) {
-}
-
-@media (min-width: 1440px) {
-}

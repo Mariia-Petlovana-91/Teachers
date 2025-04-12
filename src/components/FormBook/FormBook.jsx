@@ -35,7 +35,13 @@ const FormBook = () => {
         learning goals, and tailor the lesson to your specific needs.
       </p>
       <div className="book__data">
-        <img className="book__img" src={teacher.avatar_url} alt="teacher avatar" />
+        <img
+          className="book__img"
+          src={teacher.avatar_url}
+          alt="teacher avatar"
+          width="44px"
+          height="44px"
+        />
         <div>
           <p className="book__text">Your teacher</p>
           <p className="book__name">

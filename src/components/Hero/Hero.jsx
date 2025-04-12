@@ -19,7 +19,13 @@ const Hero = () => {
           Get Started
         </NavLink>
       </div>
-      <img className="hero__img" src={imgHero} alt="hero image" />
+      <img
+        className="hero__img"
+        src={imgHero}
+        alt="hero image"
+        width="60%"
+        height="100%"
+      />
     </section>
   );
 };

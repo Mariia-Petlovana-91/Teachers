@@ -19,7 +19,7 @@ const CustomSelect = ({ options, label, onSelect, isPrice = false }) => {
         <div className="filter__select">
           <div className="filter__wrapper" onClick={() => setIsOpen(!isOpen)}>
             <p className="filter__text">{selectedOption || 'Choose'}</p>
-            <button type="button" className="filter__btn">
+            <button type="button" className="filter__btn" aria-label="Toggle dropdoun">
               {isOpen ? (
                 <FaChevronUp className="icon__filter" />
               ) : (

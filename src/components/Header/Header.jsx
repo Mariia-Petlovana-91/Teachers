@@ -43,7 +43,13 @@ const Header = () => {
       {visual && <Navigation />}
       {isLogged ? visual && <User /> : visual && <Auth />}
 
-      {<FiMenu className="icon icon__menu" onClick={onIsOpen} />}
+      {
+        <FiMenu
+          aria-label="Open mob menu btn"
+          className="icon icon__menu"
+          onClick={onIsOpen}
+        />
+      }
       {isOpen && <MobMenu setIsOpen={setIsOpen} />}
     </header>
   );

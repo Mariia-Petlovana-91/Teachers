@@ -70,6 +70,7 @@ const FormRestration = () => {
           autoComplete="off"
         />
         <button
+          aria-label="Toggle visibility password"
           className="form__btn--eyes"
           type="button"
           onClick={() => setIsPasswordVisible(!isPasswordVisible)}

@@ -42,6 +42,7 @@ const Popup = () => {
     <div className="popup" onClick={onPopupClick}>
       <div className="popup__modal" onClick={(e) => e.stopPropagation()}>
         <button
+          aria-label="Close popup"
           className="popup__btn--icon"
           type="button"
           onClick={() => dispatch(closePopup())}

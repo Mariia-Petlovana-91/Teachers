@@ -1,5 +1,4 @@
 @use '../utilities/variables' as vars;
-@use '../utilities/placeholder';
 @use '../utilities/mixin' as mix;
 
 .footer {
@@ -21,8 +20,8 @@
   }
 
   &__img {
-    width: 20px;
-    height: 20px;
+    max-width: 20px;
+    max-height: 20px;
   }
 
   &__list {
