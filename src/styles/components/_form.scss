@@ -21,16 +21,13 @@
     padding: 16px 18px;
     margin-bottom: 18px;
     width: 100%;
+
     @include mix.font(400, 16px, 1.38, vars.$woodsmokeAlfa);
 
     &:hover,
     &:focus {
       border-color: vars.$summerGreen;
     }
-  }
-
-  .form__input:last-of-type-password {
-    margin-bottom: 0;
   }
 
   &__error {
@@ -40,7 +37,6 @@
 
   &__password {
     position: relative;
-    margin-bottom: 40px;
   }
 
   &__btn--eyes {
@@ -55,5 +51,15 @@
 
   &__btn {
     width: 100%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .form {
+    &__input {
+      &:last-of-type {
+        margin-bottom: 40px;
+      }
+    }
   }
 }
