@@ -1,7 +1,7 @@
 import TeacherList from '../components/TeacherList/TeacherList';
 
 const Favorites = () => {
-  const favorites = JSON.parse(localStorage.getItem('favorites'));
+  const favorites = JSON.parse(localStorage.getItem('favorites') || []);
 
   return (
     <div className="page__teachers">
