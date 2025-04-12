@@ -84,7 +84,7 @@ This project uses Firebase Realtime Database to store and retrieve teacher data.
 
 ### Booking Form
 
-![Booking Form](./public/booking-form.png)
+![Booking Form](./public/book.png)
 
 ## LogIn Form
 
