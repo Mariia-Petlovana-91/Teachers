@@ -1,3 +1,4 @@
+import { useDispatch } from 'react-redux';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import toast from 'react-hot-toast';
@@ -9,6 +10,7 @@ import { closePopup } from '../../redux/popup/slice.js';
 import RadioBtn from '../RadioBtn/RadioBtn.jsx';
 
 const FormBook = () => {
+  const dispatch = useDispatch();
   const teacher = JSON.parse(localStorage.getItem('teacher'));
   const {
     register,
@@ -41,8 +43,11 @@ const FormBook = () => {
           </p>
         </div>
       </div>
-      <h3 className="title__third">What is your main reason for learning {}?</h3>
-      <RadioBtn />
+      <h3 className="title__third book__title">
+        What is your main reason for learning {teacher.languages[0]}?
+      </h3>
+      <RadioBtn register={register} />
+      {errors.category && <p className="form__error">{errors.category.message}</p>}
       <input
         className="form__input"
         {...register('name')}
@@ -59,7 +64,6 @@ const FormBook = () => {
         autoComplete="off"
       />
       {errors.email && <p className="form__error">{errors.email.message}</p>}
-
       <input
         className="form__input"
         {...register('phone')}
@@ -68,7 +72,6 @@ const FormBook = () => {
         autoComplete="off"
       />
       {errors.phone && <p className="form__error">{errors.phone.message}</p>}
-
       <button className="btn form__btn" type="submit">
         Book
       </button>

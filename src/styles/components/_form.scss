@@ -3,6 +3,8 @@
 @use '../utilities/placeholder';
 
 .form {
+  max-height: 600px;
+  overflow-x: hidden;
   &__title {
     margin-bottom: 20px;
   }

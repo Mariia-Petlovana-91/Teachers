@@ -1,0 +1,86 @@
+@use '../utilities/variables' as vars;
+@use '../utilities/mixin' as mix;
+@use '../utilities/placeholder';
+
+.radio {
+  &__group {
+    margin-bottom: 24px;
+  }
+
+  &__el {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+
+    &:last-child {
+      margin-bottom: 0px;
+    }
+  }
+
+  &__input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+
+    & + .radio__label {
+      position: relative;
+      padding-left: 32px;
+      cursor: pointer;
+      display: inline-block;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        width: 24px;
+        height: 24px;
+        border: 2px solid vars.$woodsmokeAlfaPlus;
+        border-radius: 50%;
+        transition: border-color 0.2s ease;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 6px;
+        transform: translateY(-50%) scale(0);
+        width: 12px;
+        height: 12px;
+        background-color: vars.$summerGreen;
+        border-radius: 50%;
+        transition: transform 0.2s ease;
+      }
+    }
+
+    &:checked + .radio__label::before {
+      border-color: vars.$summerGreen;
+    }
+
+    &:checked + .radio__label::after {
+      transform: translateY(-50%) scale(1);
+    }
+  }
+
+  &__label {
+    cursor: pointer;
+    @include mix.font(400, 16px, 1.38);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .radio {
+    &__group {
+      margin-bottom: 40px;
+    }
+  }
+}

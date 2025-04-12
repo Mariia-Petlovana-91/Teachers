@@ -39,15 +39,6 @@ export const schemaValidationBook = Yup.object().shape({
     .required('Phone number cannot be empty'),
 
   category: Yup.string()
-    .oneOf(
-      [
-        'career and business',
-        'lesson for kids',
-        'living abroad',
-        'exams and coursework',
-        'culture, travel or hobby',
-      ],
-      'Invalid category selection',
-    )
+    .oneOf(['career', 'kids', 'abroad', 'exams', 'hobby'], 'Invalid category selection')
     .required('Please select a category'),
 });

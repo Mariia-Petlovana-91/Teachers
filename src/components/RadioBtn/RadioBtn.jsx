@@ -1,30 +1,75 @@
-const RadioBtn = () => {
+const RadioBtn = ({ register }) => {
   return (
-    <div className="radio-group">
-      <input type="radio" id="option1" name="radio" value="1" />
-      <label htmlFor="option1" className="radio-label">
-        Option 1
-      </label>
+    <div className="radio__group">
+      <div className="radio__el">
+        <input
+          className="radio__input"
+          type="radio"
+          id="career"
+          name="category"
+          value="career"
+          {...register('category')}
+        />
+        <label className="radio__label" htmlFor="career">
+          Career and business
+        </label>
+      </div>
 
-      <input type="radio" id="option2" name="radio" value="2" />
-      <label htmlFor="option2" className="radio-label">
-        Option 2
-      </label>
+      <div className="radio__el">
+        <input
+          className="radio__input"
+          type="radio"
+          id="kids"
+          name="category"
+          value="kids"
+          {...register('category')}
+        />
+        <label className="radio__label" htmlFor="kids">
+          Lesson for kids
+        </label>
+      </div>
 
-      <input type="radio" id="option3" name="radio" value="3" />
-      <label htmlFor="option3" className="radio-label">
-        Option 3
-      </label>
+      <div className="radio__el">
+        <input
+          className="radio__input"
+          type="radio"
+          id="abroad"
+          name="category"
+          value="abroad"
+          {...register('category')}
+        />
+        <label className="radio__label" htmlFor="abroad">
+          Living abroad
+        </label>
+      </div>
 
-      <input type="radio" id="option4" name="radio" value="4" />
-      <label htmlFor="option4" className="radio-label">
-        Option 4
-      </label>
+      <div className="radio__el">
+        <input
+          className="radio__input"
+          type="radio"
+          id="exams"
+          name="category"
+          value="exams"
+          {...register('category')}
+        />
+        <label className="radio__label" htmlFor="exams">
+          Exams and coursework
+        </label>
+      </div>
 
-      <input type="radio" id="option5" name="radio" value="5" />
-      <label htmlFor="option5" className="radio-label">
-        Option 5
-      </label>
+      <div className="radio__el">
+        <input
+          className="radio__input"
+          type="radio"
+          id="hobby"
+          name="category"
+          value="hobby"
+          {...register('category')}
+        />
+        <label className="radio__label" htmlFor="hobby">
+          Culture, travel or hobby
+        </label>
+      </div>
     </div>
   );
 };
