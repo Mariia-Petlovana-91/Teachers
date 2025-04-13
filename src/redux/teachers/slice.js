@@ -22,20 +22,30 @@ const teachersSlice = createSlice({
       })
       .addCase(getTeachers.fulfilled, (state, action) => {
         state.loading = false;
-        const { teachers, lastKey } = action.payload;
+        const { teachers, lastKey, isLastPage } = action.payload;
 
         if (teachers.length === 0) {
           state.isMoreData = false;
           return;
         }
-        if (state.lastKey === lastKey) {
-          state.teachers = teachers;
-        } else {
-          state.teachers = [...state.teachers, ...teachers];
+
+        const existingIds = state.teachers.map((teacher) => teacher.id);
+        const uniqueTeachers = teachers.filter(
+          (teacher) => !existingIds.includes(teacher.id),
+        );
+
+        if (uniqueTeachers.length > 0) {
+          if (state.lastKey === lastKey) {
+            state.teachers = uniqueTeachers;
+          } else {
+            state.teachers = [...state.teachers, ...uniqueTeachers];
+          }
         }
 
         state.lastKey = lastKey;
+        state.isMoreData = !isLastPage;
       })
+
       .addCase(getTeachers.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;

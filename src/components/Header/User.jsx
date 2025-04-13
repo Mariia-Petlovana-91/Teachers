@@ -8,6 +8,7 @@ import Loader from '../common/Loader';
 import { selectUser } from '../../redux/auth/selectors';
 import { selectLoading } from '../../redux/auth/selectors';
 import { logoutUser } from '../../redux/auth/operation';
+import { clear } from '../../redux/favorites/slice';
 
 const User = () => {
   const user = useSelector(selectUser);
@@ -26,6 +27,7 @@ const User = () => {
         className="user__btn"
         type="button"
         onClick={() => {
+          dispatch(clear());
           dispatch(logoutUser());
         }}
       >

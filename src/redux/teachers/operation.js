@@ -31,16 +31,19 @@ export const getTeachers = createAsyncThunk(
         : query(teachersDataRef, orderByKey(), limitToFirst(PAGE_SIZE));
 
       const teachersSnapshot = await get(teachersQuery);
+
       const teachers = teachersSnapshot.val();
+      const teachersList = teachers
+        ? Object.entries(teachers).map(([id, data]) => ({
+            id,
+            ...data,
+          }))
+        : [];
 
-      const teachersList = Object.entries(teachers).map(([id, data]) => ({
-        id,
-        ...data,
-      }));
+      const lastKeyFetched = teachers ? Object.keys(teachers).pop() : null;
+      const isLastPage = teachersList.length < PAGE_SIZE;
 
-      const lastKeyFetched = Object.keys(teachers).pop();
-
-      return { teachers: teachersList, lastKey: lastKeyFetched };
+      return { teachers: teachersList, lastKey: lastKeyFetched, isLastPage };
     } catch (error) {
       toast.error(error.message || 'Error fetching teachers');
       return rejectWithValue(error.message);

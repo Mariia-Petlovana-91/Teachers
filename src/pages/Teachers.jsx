@@ -73,9 +73,7 @@ const Teachers = () => {
     <div className="page__teachers">
       {isLoading && <Loader />}
 
-      {error ? (
-        <div className="error">{error}</div>
-      ) : (
+      {!error ? (
         <>
           <Filters array={filtersData} />
           <TeacherList array={finishArray} />
@@ -83,7 +81,7 @@ const Teachers = () => {
             <button className="btn page__teachers-btn" type="button" onClick={onClear}>
               Clear filter
             </button>
-          ) : isMoreData ? (
+          ) : isMoreData && lastKey ? (
             <button className="btn page__teachers-btn" type="button" onClick={loadMore}>
               Load More
             </button>
@@ -91,6 +89,8 @@ const Teachers = () => {
             <div className="page__teachers-end">End of the list</div>
           )}
         </>
+      ) : (
+        <div className="error">{error}</div>
       )}
     </div>
   );

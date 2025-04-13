@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 import toast from 'react-hot-toast';
 
@@ -10,46 +10,31 @@ import { FaRegHeart, FaHeart } from 'react-icons/fa';
 import defaultImg from '../../img/defaultImg.jpg';
 
 import { selectIsLoggedIn } from '../../redux/auth/selectors';
+import { selectFavoriteList } from '../../redux/favorites/selectors';
+import { toggleFavorite } from '../../redux/favorites/slice';
 
 import { openPopup } from '../../redux/popup/slice';
 
 const TeacherItem = ({ teacher }) => {
   const dispatch = useDispatch();
-  const isLgged = useSelector(selectIsLoggedIn);
-  const [isFavorite, setIsFavorite] = useState(false);
+  const isLogged = useSelector(selectIsLoggedIn);
+  const favorites = useSelector(selectFavoriteList);
+  const isFavorite = favorites.some((fav) => fav.id === teacher.id);
   const [isVisible, setIsVisible] = useState(false);
-  useEffect(() => {
-    const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-    const isTeacherFavorite = favorites.some((fav) => fav.id === teacher.id);
-    setIsFavorite(isTeacherFavorite);
-  }, [teacher.id]);
 
-  const toggleFavorite = () => {
-    let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-
-    if (favorites.some((fav) => fav.id === teacher.id)) {
-      favorites = favorites.filter((fav) => fav.id !== teacher.id);
-      setIsFavorite(false);
-    } else {
-      favorites.push(teacher);
-      setIsFavorite(true);
-    }
-    localStorage.setItem('favorites', JSON.stringify(favorites));
-  };
-
-  const toggleVisibility = () => {
-    setIsVisible(!isVisible);
-  };
+  const toggleVisibility = () => setIsVisible(!isVisible);
 
   const onFavorite = () => {
-    if (isLgged) {
-      return toggleFavorite();
+    if (isLogged) {
+      dispatch(toggleFavorite(teacher));
+    } else {
+      toast.error('You are not authorized 🤷‍♀️. Please login or register 👌');
     }
-    return toast.error('You not autorize🤷‍♀️.Please login or registration👌');
   };
 
   const onBook = () => {
     localStorage.setItem('teacher', JSON.stringify(teacher));
+    dispatch(openPopup('book'));
   };
 
   return (
@@ -91,7 +76,7 @@ const TeacherItem = ({ teacher }) => {
               type="button"
               className="teachers__btn-favorite"
               onClick={onFavorite}
-              aria-label="Add tracher for favorites teachers"
+              aria-label="Add teacher to favorites"
             >
               {isFavorite ? (
                 <FaHeart className="icon__favorite" />
@@ -133,7 +118,7 @@ const TeacherItem = ({ teacher }) => {
                         className="reviews__avatar"
                         src={
                           review.avatar
-                            ? `"https://ftp.goit.study/img/avatars/${review.avatar}"`
+                            ? `https://ftp.goit.study/img/avatars/${review.avatar}`
                             : defaultImg
                         }
                         alt="avatar user"
@@ -157,29 +142,25 @@ const TeacherItem = ({ teacher }) => {
             </ul>
           </>
         )}
+
         <button className="teacher__btn-read" type="button" onClick={toggleVisibility}>
           {isVisible ? 'Show less' : 'Read more'}
         </button>
+
         <ul className="levels__list">
           {teacher.levels && teacher.levels.length !== 0 ? (
-            teacher.levels.map((levels, index) => (
+            teacher.levels.map((level, index) => (
               <li className="levels__item" key={index}>
-                <p className="levels__text">#{levels}</p>
+                <p className="levels__text">#{level}</p>
               </li>
             ))
           ) : (
             <p>No levels available</p>
           )}
         </ul>
+
         {isVisible && (
-          <button
-            type="button"
-            className="btn teacher__btn-book"
-            onClick={() => {
-              dispatch(openPopup('book'));
-              onBook();
-            }}
-          >
+          <button type="button" className="btn teacher__btn-book" onClick={onBook}>
             Book trial lesson
           </button>
         )}

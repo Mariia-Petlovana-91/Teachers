@@ -1,5 +1,6 @@
 @use '../utilities/variables' as vars;
 
+html,
 body {
   font-family: Roboto;
   position: relative;
@@ -47,4 +48,9 @@ img {
 input {
   outline: none;
   transition: vars.$transitionAll;
+}
+
+body.no-scroll {
+  overflow: hidden;
+  height: 100vh;
 }

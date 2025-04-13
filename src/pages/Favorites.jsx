@@ -1,7 +1,11 @@
+import { useSelector } from 'react-redux';
+
+import { selectFavoriteList } from '../redux/favorites/selectors';
+
 import TeacherList from '../components/TeacherList/TeacherList';
 
 const Favorites = () => {
-  const favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
+  const favorites = useSelector(selectFavoriteList);
 
   return (
     <div className="page__teachers">

@@ -2,8 +2,6 @@
 @use '../utilities/mixin' as mix;
 
 .page {
-  margin-bottom: 24px;
-
   &__teachers {
     background-color: vars.$backgroundTeachers;
     padding: 20px;

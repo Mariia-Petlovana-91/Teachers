@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+
 import { useDispatch, useSelector } from 'react-redux';
 
 import { RiCloseFill } from 'react-icons/ri';
@@ -13,6 +15,18 @@ const Popup = () => {
   const isOpen = useSelector(selectOpen);
   const modalType = useSelector(selectModalType);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add('no-scroll');
+    } else {
+      document.body.classList.remove('no-scroll');
+    }
+
+    return () => {
+      document.body.classList.remove('no-scroll');
+    };
+  }, [isOpen]);
 
   const renderModalContent = () => {
     switch (modalType) {
