@@ -1,20 +1,19 @@
 @use '../utilities/mixin' as mix;
 
 .header {
+  padding: 24px;
   @include mix.flex($justify: space-between);
-  margin-bottom: 20px;
 }
 
 @media screen and (min-width: 768px) {
   .header {
-    padding-left: 32px;
-    padding-right: 32px;
+    padding: 32px;
   }
 }
 
 @media screen and (min-width: 1440px) {
   .header {
-    padding-left: 64px;
-    padding-right: 64px;
+    padding-left: 128px;
+    padding-right: 128px;
   }
 }

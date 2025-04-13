@@ -2,8 +2,7 @@
 @use '../utilities/mixin' as mix;
 
 .footer {
-  margin-top: auto;
-  padding-top: 24px;
+  padding: 24px;
   &__title {
     @include mix.flex($justify: flex-start, $gap: 10px);
     @include mix.font(500, 16px, 1.25);
@@ -37,14 +36,13 @@
 
 @media (min-width: 768px) {
   .footer {
-    padding-left: 32px;
-    padding-right: 32px;
+    padding: 32px;
   }
 }
 
 @media (min-width: 1440px) {
   .footer {
-    padding-left: 64px;
-    padding-right: 64px;
+    padding-left: 128px;
+    padding-right: 128px;
   }
 }

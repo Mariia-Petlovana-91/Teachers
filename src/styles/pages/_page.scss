@@ -2,6 +2,12 @@
 @use '../utilities/mixin' as mix;
 
 .page {
+  flex: 1;
+  &__home {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
   &__teachers {
     background-color: vars.$backgroundTeachers;
     padding: 20px;
@@ -35,7 +41,12 @@
 @media screen and (min-width: 768px) {
   .page {
     &__teachers {
-      padding: 40px;
+      padding: 32px;
+    }
+
+    &__home {
+      padding-left: 32px;
+      padding-right: 32px;
     }
   }
 }
@@ -43,7 +54,12 @@
 @media screen and (min-width: 1440px) {
   .page {
     &__teachers {
-      padding: 64px;
+      padding: 96px 128px 96px 128px;
+    }
+
+    &__home {
+      padding-left: 64px;
+      padding-right: 64px;
     }
   }
 }

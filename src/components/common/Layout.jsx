@@ -1,7 +1,6 @@
 import { useState } from 'react';
 
 import { Outlet } from 'react-router-dom';
-import Container from './Container';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import FormRestration from '../FormRegistration/FormRegistration';
@@ -12,7 +11,7 @@ const Layout = () => {
   const [isOpenRegist, setIsOpenRegist] = useState(false);
 
   return (
-    <Container>
+    <div className="layout">
       <Header setIsOpenLogIn={setIsOpenLogIn} setIsOpenRegist={setIsOpenRegist} />
       <main className="page">
         {isOpenLogIn && <FormLogin setIsOpenLogIn={setIsOpenLogIn} />}
@@ -20,7 +19,7 @@ const Layout = () => {
         <Outlet />
       </main>
       <Footer />
-    </Container>
+    </div>
   );
 };
 
