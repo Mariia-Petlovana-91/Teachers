@@ -13,6 +13,7 @@
     transform: translate(-50%, -50%);
     background-color: vars.$white;
     padding: 24px;
+    z-index: 1;
   }
 
   &__head {

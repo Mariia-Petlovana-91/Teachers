@@ -50,7 +50,7 @@ const Header = () => {
           onClick={onIsOpen}
         />
       }
-      {isOpen && <MobMenu setIsOpen={setIsOpen} />}
+      {isOpen && <MobMenu setIsOpen={setIsOpen} isOpen={isOpen} />}
     </header>
   );
 };

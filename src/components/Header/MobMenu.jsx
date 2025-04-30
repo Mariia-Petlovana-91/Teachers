@@ -10,10 +10,22 @@ import Navigation from './Navigation';
 import Auth from './Auth';
 import User from './User';
 
-const MobMenu = ({ setIsOpen }) => {
+const MobMenu = ({ setIsOpen, isOpen }) => {
   const isLogged = useSelector(selectIsLoggedIn);
   const location = useLocation();
   const prevLocation = useRef(location.pathname);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add('no-scroll');
+    } else {
+      document.body.classList.remove('no-scroll');
+    }
+
+    return () => {
+      document.body.classList.remove('no-scroll');
+    };
+  }, [isOpen]);
 
   useEffect(() => {
     if (prevLocation.current !== location.pathname) {
